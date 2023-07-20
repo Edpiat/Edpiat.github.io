@@ -9,7 +9,7 @@
       rel="stylesheet"
     />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -34,21 +34,17 @@
     <!-- Chart JS Plugin for displaying text over chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
     <!-- Script -->
-    <script src="script.js"></script>
+    <script src="/src/script.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
 
-        //declaring a variable and assigning it an action to do
         let tg = window.Telegram.WebApp;
         let play = document.getElementById("play");
 
-        //if we click on paly button the class wrapper will switch to display block in style.css and id "form" to display none
         play.addEventListener("click", () => {
             document.getElementById("form").style.display = "none";
             document.getElementsByClassName("wrapper")[0].style.display = "block";
-            //to expand the web app window to max
             tg.expand();
-            // we automatically fill in the users tg username to a Телеграм ник field
             document.getElementById("tgusername").value = tg.initDataUnsafe.user.username;
             
 
